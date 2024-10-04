@@ -1,0 +1,643 @@
+/*&GeneralStyles----------------------------------------------------------------*/
+
+:root {
+    --color-default: #212529;
+    --primary-hue: 0;
+    --primary-saturation: 84%;
+    --primary-lightness: 44%;
+    --color-primary: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
+    --color-secondary: #37373f;
+    --color-tertiary: #7f7f90;
+    --light-hue: 0;
+    --light-saturation: 0%;
+    --light-lightness: 100%;
+    --color-light: hsl(var(--light-hue), var(--light-saturation), var(--light-lightness));
+    --color-light-grey: #eee;
+    --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-primary: "Amatic SC", sans-serif;
+    --font-secondary: "Inter", sans-serif;
+    --animation-duration: 400ms;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px;
+    font-family: "SourceSans3", sans-serif;
+}
+
+a,
+span {
+    display: inline-block;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style-type: none;
+}
+
+.container {
+    width: 93%;
+    margin-inline: auto;
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+
+/*&EndofGeneralStyles----------------------------------------------------------------*/
+
+
+/*?NavBar-----------------------------------------------------------------------------*/
+
+.nav-bar {
+    color: black;
+    padding-block: 20px;
+    background-color: var(--color-light);
+    box-shadow: 0px0px14px0px#0000001b;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+}
+
+.nav-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar h1 a::after {
+    content: ".";
+    color: var(--color-primary);
+}
+
+.menu-desktop {
+    display: none;
+}
+
+.desktop-moon-logo {
+    display: none;
+}
+
+.menu-list ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 13px;
+}
+
+.menu-list a {
+    color: lightgray;
+    position: relative;
+    transition: color 350ms;
+}
+
+.menu-list a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 2px;
+    background-color: red;
+    transform: scale(0);
+    transition: transform 350ms;
+}
+
+.menu-list a:hover::before {
+    transform: scale(1);
+}
+
+.menu-list a:hover {
+    color: #212529;
+}
+
+
+.menu-phone {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+    width: 30%;
+}
+
+.menu-phone i {
+    transform: scale(1.6);
+}
+
+
+/*?-------------------------------------------------------------------------------------*/
+
+.home-section {
+    margin-top: 70px;
+    background-color: var(--color-light-grey);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-section .container {
+    padding-block: 40px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dish-image {
+    width: 100%;
+    padding-block: 10px;
+}
+
+.dish-image img {
+    width: 100%;
+}
+.dish-image img:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+.header-content {
+    padding-block: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 20px;
+    align-items: center;
+}
+
+.header-content h2 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-primary-weight);
+    font-style: var(--font-primary-style);
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.header-content *::selection {
+    background-color: var(--color-primary);
+}
+
+.header-content p {
+    text-align: center;
+}
+
+.header-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-btn {
+    background-color: crimson;
+    color: white;
+    padding-block: 10px;
+    padding-inline: 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.book-btn:hover {
+    background-color: red;
+}
+
+.watch-vid-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.watch-vid-btn:hover {
+    color: red;
+}
+.watch-vid-btn:hover a{
+    color: red;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.big-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, red 0% 50%, transparent 50% 100%);
+}
+
+
+/* !Chef section------------------------------------------------------------------------------------ */
+
+.chefs-section {
+    padding-block: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chefs-section .container {
+    padding-block: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chef-title {
+    color: var(--color-tertiary);
+    font-weight: 400;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+.chef-head {
+    font-family: var(--font-primary);
+    font-weight: var(--font-primary-weight);
+    font-style: var(--font-primary-style);
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.chef-head span {
+    color: red;
+}
+
+.chef-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 10px;
+    padding-block: 30px;
+}
+
+.chef-card {
+    background-color: var(--color-light);
+    box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    width: 100%;
+    transition: transform 120ms;
+    border-radius: 13px;
+    transition: transform 200ms;
+}
+
+.inner-chef-card {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chef-card:hover {
+    transform: scale(1.058);
+}
+
+.inner-chef-card img {
+    width: 100%;
+}
+
+.inner-chef-card p {
+    display: block;
+    padding-block: 5px;
+    text-align: center;
+}
+
+.card-head {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.card-sub-head,
+.card-description {
+    color: silver;
+}
+
+
+/* !End chef section ------------------------------------------------------------------------------- */
+
+
+/* ?------------------------------------------------------------------------------------------------ */
+
+.Gellery-section {
+    padding-block: 20px;
+    background-color: var(--color-light-grey);
+}
+
+.Gellery-section .container {
+    padding-block: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.gallery-cards {
+    padding-block: 20px;
+    display: grid;
+    gap: 10px;
+}
+
+.img-card img {
+    width: 100%;
+    display: block;
+}
+.pizza-card {
+    order: 0;
+}
+.Levitation-card {
+    order: 2;
+}
+.beef-card {
+    order: 4;
+}
+.Frittata-card {
+    order: 3;
+}
+.Burger-card {
+    order: 1;
+}
+.chicken-card {
+    order: 5;
+}
+.kebab-card {
+    order: 6;
+}
+.img-card {
+    position: relative;
+    background-color: #37373f;
+    overflow: hidden;
+    
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0, 0.6);
+    opacity: 1;
+    transition: opacity 300ms;
+    transform: translateY(100%);
+    transition: transform 500ms;
+
+}
+.img-card:hover .overlay{
+    transform: translateY(0);
+}
+.overlay-text {
+     position: absolute;
+     top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    left: 0;
+    color: white;
+    padding-inline: 10px;
+    text-align: center;
+    display: block;
+}
+.overlay-text h2 {
+    padding-block: 15px;
+}
+/* !----------------------------------------------------------------- */
+.contact-us-section {
+    padding-block: 20px;
+}
+
+
+.contact-us-section .container {
+    padding-block: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    padding-block: 30px;
+    gap: 10px;
+}
+.contact-card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    background-color: hsl( 0, 0%, calc(100% - 4%) );
+    padding: 20px;
+}
+.contact-card .circle {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+}
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5px;
+}
+/* ----------------------------------------------------------------------- */
+.client-contact {
+    width: 100%;
+    padding: 30px;
+    background-color: var(--color-light);
+    box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.client-inputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.Name-Input,
+.Email-Input,.Subject-Input,.Message-Input {
+    width: 100%;
+    padding: 15px;
+    border: #7f7f90 0.5px solid;
+}
+.send-message-btn {
+    background-color: crimson;
+    color: white;
+    padding-block: 15px;
+    padding-inline: 35px;
+    border: none;
+    border-radius: 20px;
+}
+/* !----------------------------------------------------------------- */
+.footer-section {
+    background-color: black;
+    color: white;
+    padding-block: 20px;
+}
+.footer-section .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.footer-section .about div{
+    display: flex;
+    padding-block: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.footer-section .about div h2::after{
+    content: ".";
+    color: red;
+}
+.footer-section .about img {
+    width: 34px;
+    object-fit: cover;
+}
+.footer-section .about h3 {
+    text-align: center;
+    padding-block: 10px;
+    position: relative;
+}
+.footer-section .about h3::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    left: 0;
+    right: 0;
+    height: 1px;
+    bottom: -4px;
+}
+.social-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-block: 20px;
+    gap: 20px;
+}
+.social-links i {
+    color: white;
+    font-size: 23px;
+}
+
+.subscription {
+    padding-block: 10px;
+}
+.subscription-box {
+    padding-block: 10px;
+}
+.subscription-box p {
+    padding-block: 20px;
+}
+.sunscription-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+.sunscription-group input{
+  width: 100%;
+  padding: 10px;
+}
+.sunscription-group button {
+    width: 100%;
+    padding: 12px;
+    background-color: crimson;
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+.sunscription-group button:hover {
+    background-color: red;
+}
+.quick-links {
+    padding-block: 10px;
+}
+.quick-links ul {
+    padding-block: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+.quick-links li {
+    width: 40%;
+}
+.quick-links li::before {
+    content: ">";
+    padding-inline: 3px;
+}
+.quick-links li a{
+    color: white;
+}
+.quick-links li {
+    padding: 3px;
+    transition: transform 200ms,background-color 200ms;
+}
+.quick-links li:hover{
+    transform: translateX(14px);
+    background-color: silver;
+}
+.contact-details h3{
+    padding-block: 10px;
+}
+.contact-details li {
+    padding-block: 10px;
+}
+.contact-details li i {
+    color: red;
+    padding-inline: 3px;
+    font-size: 18px;
+}
+.contact-details li a {
+    color: white;
+}
